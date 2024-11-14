@@ -1,0 +1,13 @@
+/*PageNav.module.css*/
+
+.nav ul {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+
+  list-style: none;
+}
+
+.nav a {
+  text-decoration: none;
+}
