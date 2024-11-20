@@ -8,10 +8,10 @@ const CitiesContext = createContext();
 
 function CitiesProvider ({ children })
 {
-  //устанавливается в useEffect ниже
+  //устанавливается в useEffect см здесь ниже
   const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  //устанавливается в fn getCurrentCity ниже
+  //устанавливается в fn getCurrentCity см здесь ниже
   const [currentCity, setCurrentCity] = useState({});
 
   useEffect(function ()
@@ -45,6 +45,7 @@ function CitiesProvider ({ children })
     try 
     {
       setIsLoading(true);
+      console.log(`ссылка для города ${BASE_URL}/cities/${id}`);
       const res = await fetch(`${BASE_URL}/cities/${id}`);
       const data = await res.json();
 
@@ -52,7 +53,8 @@ function CitiesProvider ({ children })
     }
     catch (error) 
     {
-      alert(error.message);
+      console.log(data);
+      alert(`(Сообщение из CitiesContext.getCurrentCity()) ${error.message}`);
     }
     finally
     {

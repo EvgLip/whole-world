@@ -6,6 +6,7 @@ import { useCities } from '../contexts/CitiesContext';
 
 export default function CityList ()
 {
+  //определяется в <CitiesContext/>
   const { cities, isLoading } = useCities();
 
   console.log('CityList');
