@@ -16,7 +16,7 @@ import { CitiesProvider } from "./contexts/CitiesContext";
 export default function App ()
 {
 
-  console.log('App');
+  // console.log('App');
 
   return (
     <CitiesProvider>

@@ -7,7 +7,7 @@ import styles from './AppLayout.module.css';
 
 export default function AppLayout ()
 {
-  console.log('AppLayout');
+  // console.log('AppLayout');
 
   return (
     <div className={styles.app}>

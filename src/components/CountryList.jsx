@@ -10,7 +10,7 @@ export default function CountryList ()
 {
   const { cities, isLoading } = useCities();
 
-  console.log('CountryList');
+  // console.log('CountryList');
 
   if (isLoading) return <Spinner />;
 

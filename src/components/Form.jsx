@@ -1,13 +1,21 @@
 // "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
 
 import { useEffect, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { registerLocale, setDefaultLocale } from "react-datepicker";
+import { ru } from 'date-fns/locale/ru';
 
 import styles from "./Form.module.css";
 import Button from "./Button";
 import BackButton from "./BackButton";
 import { useURLPosition } from "../hooks/useURLPosition";
+import Message from './Message';
+import Spinner from './Spinner';
+import { useCities } from "../contexts/CitiesContext";
 
-export function convertToEmoji (countryCode)
+function convertToEmoji (countryCode)
 {
   const codePoints = countryCode
     .toUpperCase()
@@ -17,20 +25,26 @@ export function convertToEmoji (countryCode)
 }
 
 const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
+registerLocale("ru", ru);
 
 function Form ()
 {
   //устанавливаестся в <Map/> в fn DetectClick
   const [lat, lng] = useURLPosition();
+  const { createNewPlace, isLoading } = useCities();
+  const navigate = useNavigate();
+
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [cityName, setCityName] = useState("");
   const [country, setCountry] = useState("");
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
   const [emoji, setEmoji] = useState("");
+  const [geocodingError, setGeocodingError] = useState('');
 
   useEffect(function ()
   {
+    if (!lat && !lng) return;
     fetchCityData();
 
     async function fetchCityData ()
@@ -38,17 +52,20 @@ function Form ()
       try 
       {
         setIsLoadingGeocoding(true);
+        setGeocodingError('');
         const res = await fetch(`${BASE_URL}?latitude=${lat}&longitude=${lng}`);
         const data = await res.json();
+
+        if (!data.countryCode) throw new Error('Похоже здесь нет города. Попробуйте указать другое место 🤔');
+
         setCityName(data.city === data.locality ? `${data.city}` : `${data.city} ${data.locality}`);
         setCountry(data.countryName);
         setEmoji(convertToEmoji(data.countryCode));
         console.log('Form data ', data);
-        console.log('Form emoji ', emoji);
       }
       catch (error) 
       {
-        alert(`(Сообщение из Form()) ${error.message}`);
+        setGeocodingError(error.message);
       }
       finally
       {
@@ -57,10 +74,40 @@ function Form ()
     }
   }, [lat, lng]);
 
-  console.log('Form');
+  async function handleSubmit (e)
+  {
+    e.preventDefault();
+
+    if (!cityName && !date) return;
+    if (!lat && !lng) return;
+
+    const newPlace = {
+      cityName,
+      country,
+      emoji,
+      date,
+      notes,
+      position: {
+        lat,
+        lng,
+      },
+    };
+
+    await createNewPlace(newPlace);
+    navigate('/app');
+  }
+
+  // console.log('Form');
+
+  if (isLoadingGeocoding) return <Spinner />;
+  if (geocodingError) return <Message message={geocodingError} />;
+  if (!lat && !lng) return <Message message={'Укажите нужное место на карте 🫠'} />;
 
   return (
-    <form className={styles.form} >
+    <form
+      className={`${styles.form} ${isLoading ? styles.loading : ''}`}
+      onSubmit={handleSubmit}
+    >
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
@@ -72,11 +119,19 @@ function Form ()
       </div>
 
       <div className={styles.row}>
-        <label htmlFor="date">When did you go to {cityName}?</label>
-        <input
+        <label htmlFor="date">Когда Вы там были {cityName}?</label>
+        {/* <input
           id="date"
           onChange={(e) => setDate(e.target.value)}
           value={date}
+        /> */}
+        <DatePicker
+          id="date"
+          showIcon
+          locale="ru"
+          dateFormat="dd.MM.yyyy"
+          selected={date}
+          onChange={date => setDate(date)}
         />
       </div>
 

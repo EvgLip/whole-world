@@ -3,7 +3,7 @@ import styles from "./Logo.module.css";
 
 function Logo ()
 {
-  console.log('Logo');
+  // console.log('Logo');
 
   return (
     <Link to='/'>

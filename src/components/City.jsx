@@ -20,7 +20,7 @@ function City ()
     getCurrentCity(id);
   }, [id]);
 
-  console.log('City');
+  // console.log('City');
 
   if (isLoading) return <Spinner />;
 

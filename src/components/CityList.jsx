@@ -9,7 +9,8 @@ export default function CityList ()
   //определяется в <CitiesContext/>
   const { cities, isLoading } = useCities();
 
-  console.log('CityList');
+  // console.log('CityList');
+
   if (isLoading) return <Spinner />;
 
   if (!cities.length) return <Message message='Add your first city by clicking on the map.' />;

@@ -60,7 +60,36 @@ function CitiesProvider ({ children })
     }
   }
 
-  console.log('CitiesContext');
+  //вызывается в <Form/>
+  //добавляет в БД новое место
+  async function createNewPlace (newPlace)
+  {
+    try 
+    {
+      setIsLoading(true);
+      const res = await fetch(
+        `${BASE_URL}/cities`,
+        {
+          method: "POST",
+          body: JSON.stringify(newPlace),
+          headers: { "Content-Type": "application/json" }
+        }
+      );
+      const data = await res.json();
+      //временный костыль для обновления информации в
+      setCities(cities => [...cities, data]);
+    }
+    catch (error) 
+    {
+      alert(`(Сообщение из CitiesContext.getCurrentCity()) ${error.message}`);
+    }
+    finally
+    {
+      setIsLoading(false);
+    }
+  }
+
+  // console.log('CitiesContext');
 
   return (
     <CitiesContext.Provider
@@ -71,6 +100,7 @@ function CitiesProvider ({ children })
           isLoading,
           currentCity,
           getCurrentCity,
+          createNewPlace,
         }
       }
     >

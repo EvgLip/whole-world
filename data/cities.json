@@ -10,7 +10,7 @@
         "lat": 38.727881642324164,
         "lng": -9.140900099907554
       },
-      "id": 73930385
+      "id": "73930385"
     },
     {
       "cityName": "Madrid",
@@ -22,7 +22,7 @@
         "lat": 40.46635901755316,
         "lng": -3.7133789062500004
       },
-      "id": 17806751
+      "id": "17806751"
     },
     {
       "cityName": "Berlin",
@@ -34,7 +34,79 @@
         "lat": 52.53586782505711,
         "lng": 13.376933665713324
       },
-      "id": 98443197
+      "id": "98443197"
+    },
+    {
+      "id": "5c5e",
+      "cityName": "Lipetsk",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-11-21T16:41:25.786Z",
+      "notes": "Мой город",
+      "position": {
+        "lat": "52.59303784115744",
+        "lng": "39.60571289062501"
+      }
+    },
+    {
+      "id": "3d6f",
+      "cityName": "Lipetsk",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-11-21T16:43:14.865Z",
+      "notes": "Город где я родился, вырос и живу.",
+      "position": {
+        "lat": "52.59303784115744",
+        "lng": "39.60571289062501"
+      }
+    },
+    {
+      "id": "b92b",
+      "cityName": "Voronezh",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-11-21T16:51:27.018Z",
+      "notes": "fads",
+      "position": {
+        "lat": "51.645294049305406",
+        "lng": "39.15527343750001"
+      }
+    },
+    {
+      "id": "9046",
+      "cityName": "Ryazan’",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-11-21T16:51:27.018Z",
+      "notes": "tezt",
+      "position": {
+        "lat": "54.635697306063854",
+        "lng": "39.68261718750001"
+      }
+    },
+    {
+      "id": "59ff",
+      "cityName": "Ryazan’",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-11-21T16:57:44.839Z",
+      "notes": "",
+      "position": {
+        "lat": "54.635697306063854",
+        "lng": "39.68261718750001"
+      }
+    },
+    {
+      "id": "fcac",
+      "cityName": "Tula",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-11-21T17:00:37.524Z",
+      "notes": "cxcxc",
+      "position": {
+        "lat": "54.13669645687002",
+        "lng": "37.61718750000001"
+      }
     }
   ]
 }

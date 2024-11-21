@@ -3,7 +3,7 @@ import styles from "./AppNav.module.css";
 
 function AppNav ()
 {
-  console.log('AppNav');
+  // console.log('AppNav');
 
   return (
     <nav className={styles.nav}>
