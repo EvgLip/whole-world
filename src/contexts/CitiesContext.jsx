@@ -45,7 +45,6 @@ function CitiesProvider ({ children })
     try 
     {
       setIsLoading(true);
-      console.log(`ссылка для города ${BASE_URL}/cities/${id}`);
       const res = await fetch(`${BASE_URL}/cities/${id}`);
       const data = await res.json();
 

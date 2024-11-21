@@ -13,7 +13,6 @@ function City ()
   const { id } = useParams();
   //определяестя в <CitiesContext/>
   const { currentCity, getCurrentCity, isLoading } = useCities();
-
   const { cityName, emoji, date, notes } = currentCity;
 
   useEffect(function ()
