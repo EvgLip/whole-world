@@ -76,12 +76,38 @@ function CitiesProvider ({ children })
         }
       );
       const data = await res.json();
-      //временный костыль для обновления информации в
+      //временный костыль для обновления информации в списке городов
       setCities(cities => [...cities, data]);
     }
     catch (error) 
     {
-      alert(`(Сообщение из CitiesContext.getCurrentCity()) ${error.message}`);
+      alert(`(Сообщение из CitiesContext.createNewPlace()) ${error.message}`);
+    }
+    finally
+    {
+      setIsLoading(false);
+    }
+  }
+
+  //вызывается в <CityItem/>
+  //удаляет запись из БД
+  async function deletePlace (id)
+  {
+    try 
+    {
+      setIsLoading(true);
+      await fetch(
+        `${BASE_URL}/cities/${id}`,
+        {
+          method: "DELETE"
+        }
+      );
+      //временный костыль для обновления информации в списке городов
+      setCities(cities => cities.filter(city => city.id !== id));
+    }
+    catch (error) 
+    {
+      alert(`(Сообщение из CitiesContext.deletePlace()) ${error.message}`);
     }
     finally
     {
@@ -101,6 +127,7 @@ function CitiesProvider ({ children })
           currentCity,
           getCurrentCity,
           createNewPlace,
+          deletePlace,
         }
       }
     >

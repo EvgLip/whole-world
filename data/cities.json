@@ -37,18 +37,6 @@
       "id": "98443197"
     },
     {
-      "id": "5c5e",
-      "cityName": "Lipetsk",
-      "country": "Russian Federation (the)",
-      "emoji": "🇷🇺",
-      "date": "2024-11-21T16:41:25.786Z",
-      "notes": "Мой город",
-      "position": {
-        "lat": "52.59303784115744",
-        "lng": "39.60571289062501"
-      }
-    },
-    {
       "id": "3d6f",
       "cityName": "Lipetsk",
       "country": "Russian Federation (the)",
@@ -58,54 +46,6 @@
       "position": {
         "lat": "52.59303784115744",
         "lng": "39.60571289062501"
-      }
-    },
-    {
-      "id": "b92b",
-      "cityName": "Voronezh",
-      "country": "Russian Federation (the)",
-      "emoji": "🇷🇺",
-      "date": "2024-11-21T16:51:27.018Z",
-      "notes": "fads",
-      "position": {
-        "lat": "51.645294049305406",
-        "lng": "39.15527343750001"
-      }
-    },
-    {
-      "id": "9046",
-      "cityName": "Ryazan’",
-      "country": "Russian Federation (the)",
-      "emoji": "🇷🇺",
-      "date": "2024-11-21T16:51:27.018Z",
-      "notes": "tezt",
-      "position": {
-        "lat": "54.635697306063854",
-        "lng": "39.68261718750001"
-      }
-    },
-    {
-      "id": "59ff",
-      "cityName": "Ryazan’",
-      "country": "Russian Federation (the)",
-      "emoji": "🇷🇺",
-      "date": "2024-11-21T16:57:44.839Z",
-      "notes": "",
-      "position": {
-        "lat": "54.635697306063854",
-        "lng": "39.68261718750001"
-      }
-    },
-    {
-      "id": "fcac",
-      "cityName": "Tula",
-      "country": "Russian Federation (the)",
-      "emoji": "🇷🇺",
-      "date": "2024-11-21T17:00:37.524Z",
-      "notes": "cxcxc",
-      "position": {
-        "lat": "54.13669645687002",
-        "lng": "37.61718750000001"
       }
     }
   ]
