@@ -32,6 +32,7 @@
 }
 
 .city h3 span {
+  font-family: 'NotoColorEmojiLimited';
   font-size: 3.2rem;
   line-height: 1;
 }

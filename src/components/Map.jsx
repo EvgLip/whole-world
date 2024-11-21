@@ -1,12 +1,13 @@
 //Map
 
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from 'react-leaflet';
-import styles from './Map.module.css';
 import { useEffect, useState } from 'react';
 import { useCities } from '../contexts/CitiesContext';
 import { useGeolocation } from '../hooks/useGeolocation';
 import Button from './Button';
+import { useURLPosition } from '../hooks/useURLPosition';
+import styles from './Map.module.css';
 
 //возможный URL для <TileLayer> с др цветовой гаммой
 //https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png
@@ -17,10 +18,8 @@ export default function Map ()
   //определение в <CitiesContext>
   const { cities } = useCities();
   const { isLoading: isLoadingPosition, position: geolocationPosition, getPosition } = useGeolocation();
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const mapLat = searchParams.get('lat');
-  const mapLng = searchParams.get('lng');
+  //устанавливается в <CityItem/>
+  const [mapLat, mapLng] = useURLPosition();
 
   useEffect(function ()
   {
@@ -41,11 +40,14 @@ export default function Map ()
 
   return (
     <div className={styles.mapContainer} >
-      <Button type="position" onClick={getPosition}>
-        {
-          isLoadingPosition ? 'Загрузка...' : 'Мое местоположение'
-        }
-      </Button>
+      {
+        !geolocationPosition &&
+        <Button Button type="position" onClick={getPosition}>
+          {
+            isLoadingPosition ? 'Загрузка...' : 'использовать мое местоположение'
+          }
+        </Button>
+      }
       <MapContainer
         className={styles.map}
         center={mapPosition}
@@ -72,7 +74,7 @@ export default function Map ()
         <ChangeCenter position={mapPosition} />
         <DetectClick />
       </MapContainer>
-    </div>
+    </div >
   );
 }
 

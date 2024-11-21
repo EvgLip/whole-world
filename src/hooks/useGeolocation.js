@@ -1,4 +1,4 @@
-//useGeolocation
+//hook useGeolocation
 import { useState } from "react";
 
 function useGeolocation (defaultPosition = null)

@@ -2,6 +2,15 @@
 @import "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
 @import "https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap";
 
+/* статья про отображение эмодзи флагов
+https://prinsfrank.nl/2021/01/25/Non-existing-flag-emojis-on-windows */
+@font-face {
+  font-family: NotoColorEmojiLimited;
+  unicode-range: U+1F1E6-1F1FF;
+  /* src: url(https://raw.githack.com/googlefonts/noto-emoji/main/fonts/NotoColorEmoji.ttf); */
+  src: url("/src/assets/fonts/NotoColorEmoji.ttf") format('truetype');
+}
+
 /* These CSS variables are global, so they are available in all CSS modules */
 :root {
   --color-brand--1: #ffb545;

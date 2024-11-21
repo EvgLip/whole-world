@@ -52,7 +52,6 @@ function CitiesProvider ({ children })
     }
     catch (error) 
     {
-      console.log(data);
       alert(`(Сообщение из CitiesContext.getCurrentCity()) ${error.message}`);
     }
     finally
