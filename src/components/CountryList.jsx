@@ -14,7 +14,7 @@ export default function CountryList ()
 
   if (isLoading) return <Spinner />;
 
-  if (!cities.length) return <Message message='Add your first city by clicking on the map.' />;
+  if (!cities.length) return <Message message='Добавьте своe первое место, щелкнув по карте.' />;
 
   // const countries = cities.reduce((arr, city) =>
   // {
@@ -23,6 +23,7 @@ export default function CountryList ()
   //   else return arr;
   // }, []);
 
+  //из списка городов создаем список стран с уникальным названием страны
   const map = new Map(cities.map(city => [city.country, city.emoji]));
   const countries = Array.from(map, ([country, emoji]) => ({ country, emoji }));
 

@@ -13,7 +13,7 @@ export default function CityList ()
 
   if (isLoading) return <Spinner />;
 
-  if (!cities.length) return <Message message='Add your first city by clicking on the map.' />;
+  if (!cities.length) return <Message message='Добавьте своe первое место, щелкнув по карте.' />;
 
   return (
     <ul className={styles.cityList}>

@@ -1,12 +1,12 @@
 //Map
 
 import { useNavigate } from 'react-router-dom';
-import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from 'react-leaflet';
 import { useEffect, useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from 'react-leaflet';
 import { useCities } from '../contexts/CitiesContext';
 import { useGeolocation } from '../hooks/useGeolocation';
-import Button from './Button';
 import { useURLPosition } from '../hooks/useURLPosition';
+import Button from './Button';
 import styles from './Map.module.css';
 
 //возможный URL для <TileLayer> с др цветовой гаммой

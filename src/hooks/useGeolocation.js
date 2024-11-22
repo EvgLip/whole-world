@@ -1,6 +1,8 @@
 //hook useGeolocation
 import { useState } from "react";
 
+export { useGeolocation };
+
 function useGeolocation (defaultPosition = null)
 {
   const [isLoading, setIsLoading] = useState(false);
@@ -32,5 +34,3 @@ function useGeolocation (defaultPosition = null)
   }
   return { position, isLoading, error, getPosition };
 }
-
-export { useGeolocation };
