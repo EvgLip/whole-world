@@ -10,17 +10,17 @@ export default function Homepage ()
 
       <section>
         <h1>
-          You travel the world.
+          Вы путешествуете по миру.
           <br />
-          WorldWise keeps track of your adventures.
+          {'"ВесьМир" поможет следить за вашими приключениями.'}
         </h1>
         <h2>
-          A world map that tracks your footsteps into every city you can think
-          of. Never forget your wonderful experiences, and show your friends how
-          you have wandered the world.
+          Перед Вами откроется карта мира, где Вы найдете все города, которые смогли посетить.
+          Никогда не забывайте о своих замечательных впечатлениях и покажите своим друзьям, как
+          вы путешествовали по миру.
         </h2>
-        <Link to="app" className="cta">
-          Start tracking now
+        <Link to="login" className="cta">
+          {'Начни отслеживать с "ВесьМир"'}
         </Link>
       </section>
     </main>

@@ -1,6 +1,6 @@
 //CitiesContext
 
-import { createContext, useState, useEffect, useContext, useReducer } from "react";
+import { createContext, useEffect, useContext, useReducer, useCallback } from "react";
 
 export { CitiesProvider, useCities };
 
@@ -46,26 +46,27 @@ function CitiesProvider ({ children })
   }, []);
 
   //вызывается в <City/>
-  async function getCurrentCity (id)
-  {
-    if (currentCity.id === id) return;
+  const getCurrentCity = useCallback(
+    async function getCurrentCity (id)
+    {
+      if (currentCity.id === id) return;
 
-    dispatch({ type: 'loading' });
-    try 
-    {
-      const res = await fetch(`${BASE_URL}/cities/${id}`);
-      const data = await res.json();
-      dispatch({ type: 'city/loaded', payload: data });
-    }
-    catch (error) 
-    {
-      dispatch(
-        {
-          type: 'rejected',
-          payload: `(Сообщение из CitiesContext.getCurrentCity()). (${error.message})`
-        });
-    }
-  }
+      dispatch({ type: 'loading' });
+      try 
+      {
+        const res = await fetch(`${BASE_URL}/cities/${id}`);
+        const data = await res.json();
+        dispatch({ type: 'city/loaded', payload: data });
+      }
+      catch (error) 
+      {
+        dispatch(
+          {
+            type: 'rejected',
+            payload: `(Сообщение из CitiesContext.getCurrentCity()). (${error.message})`
+          });
+      }
+    }, [currentCity.id]);
 
   //вызывается в <Form/>
   //добавляет в БД новое место
@@ -147,7 +148,6 @@ function useCities ()
 {
   const context = useContext(CitiesContext);
   if (!context) throw Error('useCities() должен быть вложен в <CitiesProvider>');
-
   return context;
 }
 
@@ -197,6 +197,6 @@ function reducer (state, active)
         isLoading: false,
         error: active.payload,
       };
-    default: throw new Error('Неизвестное действие в fn reducer()');
+    default: throw new Error('Неизвестное действие в CitiesContext.reducer()');
   }
 }

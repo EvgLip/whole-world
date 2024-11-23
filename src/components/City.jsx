@@ -18,7 +18,7 @@ function City ()
   useEffect(function ()
   {
     getCurrentCity(id);
-  }, [id]);
+  }, [id, getCurrentCity]);
 
   // console.log('City');
 
