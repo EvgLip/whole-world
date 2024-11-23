@@ -9,10 +9,10 @@ function AppNav ()
     <nav className={styles.nav}>
       <ul>
         <li>
-          <NavLink to="cities">Cities</NavLink>
+          <NavLink to="cities">Города</NavLink>
         </li>
         <li>
-          <NavLink to="countries">Countries</NavLink>
+          <NavLink to="countries">Страны</NavLink>
         </li>
       </ul>
     </nav>

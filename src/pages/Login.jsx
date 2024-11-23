@@ -28,7 +28,7 @@ export default function Login ()
     <main className={styles.login}>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.row}>
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">Адрес электронной почты</label>
           <input
             type="email"
             id="email"
@@ -38,7 +38,7 @@ export default function Login ()
         </div>
 
         <div className={styles.row}>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Пароль</label>
           <input
             type="password"
             id="password"

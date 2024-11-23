@@ -33,7 +33,6 @@ export default function App ()
 
   return (
     <AuthContextProvider>
-
       <CitiesProvider>
         <BrowserRouter>
           <Suspense fallback={<SpinnerFullPage />}>

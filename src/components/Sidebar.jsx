@@ -18,7 +18,7 @@ export default function Sidebar ()
 
       <footer className={styles.footer}>
         <p className={styles.copyright}>
-          &copy; Copirigth {new Date().getFullYear()} by WorldWise Inc.
+          &copy; Авторское право от {new Date().getFullYear()} компания &quot;ВесьМир&quot;
         </p>
       </footer>
     </div>

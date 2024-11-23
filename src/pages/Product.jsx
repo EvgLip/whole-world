@@ -1,6 +1,7 @@
 import styles from "./Product.module.css";
 
-export default function Product() {
+export default function Product ()
+{
   return (
     <main className={styles.product}>
       <section>
@@ -9,7 +10,7 @@ export default function Product() {
           alt="person with dog overlooking mountain with sunset"
         />
         <div>
-          <h2>About WorldWide.</h2>
+          <h2>О продукте &quot;ВесьМир&quot;.</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo est
             dicta illum vero culpa cum quaerat architecto sapiente eius non

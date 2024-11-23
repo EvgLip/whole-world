@@ -1,15 +1,16 @@
 // Uses the same styles as Product
 import styles from "./Product.module.css";
 
-export default function Product() {
+export default function Product ()
+{
   return (
     <main className={styles.product}>
       <section>
         <div>
           <h2>
-            Simple pricing.
+            Стоимость использования.
             <br />
-            Just $9/month.
+            Всего 300 &#x20bd;/месяц.
           </h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae vel
