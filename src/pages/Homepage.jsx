@@ -20,7 +20,7 @@ export default function Homepage ()
           вы путешествовали по миру.
         </h2>
         <Link to="login" className="cta">
-          {'Начни запоминать "ВесьМир"'}
+          {'Начни вспоминать "ВесьМир"'}
         </Link>
       </section>
     </main>
