@@ -123,8 +123,6 @@ function CitiesProvider ({ children })
     }
   }
 
-  // console.log('CitiesContext');
-
   return (
     <CitiesContext.Provider
       value={

@@ -31,8 +31,6 @@ export default function Map ()
     if (geolocationPosition) setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
   }, [geolocationPosition]);
 
-  // console.log('Map');
-
   return (
     <div className={styles.mapContainer} >
       {

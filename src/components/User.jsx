@@ -7,8 +7,6 @@ function User ()
   const navegate = useNavigate();
   const { user, logout } = useAuth();
 
-  console.log('User ', user);
-
   function handleClick ()
   {
     logout();

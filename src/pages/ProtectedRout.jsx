@@ -9,11 +9,8 @@ export default function ProtectedRout ({ children })
   const navegate = useNavigate();
   const { isAuthenticated } = useAuth();
 
-  console.log('ProtectedRout');
-
   useEffect(function ()
   {
-    console.log('ProtectedRout useEffect');
     if (!isAuthenticated) navegate('/');
   }, [isAuthenticated, navegate]);
 

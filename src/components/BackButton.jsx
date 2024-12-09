@@ -17,7 +17,7 @@ export default function BackButton ()
       }
       }
     >
-      &larr; Back
+      &larr; Назад
     </Button>
   );
 }

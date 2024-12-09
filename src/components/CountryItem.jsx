@@ -2,9 +2,6 @@ import styles from "./CountryItem.module.css";
 
 function CountryItem ({ country })
 {
-
-  // console.log('CountryItem');
-
   return (
     <li className={styles.countryItem}>
       <span>{country.emoji}</span>

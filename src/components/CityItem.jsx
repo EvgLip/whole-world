@@ -4,7 +4,7 @@ import styles from './CityItem.module.css';
 import { useCities } from '../contexts/CitiesContext';
 
 const formatDate = (date) =>
-  new Intl.DateTimeFormat("en",
+  new Intl.DateTimeFormat("ru",
     {
       day: "numeric",
       month: "long",
@@ -22,8 +22,6 @@ export default function CityItem ({ city })
     e.preventDefault();
     deletePlace(id);
   }
-
-  // console.log('CityItem');
 
   return (
     <li>

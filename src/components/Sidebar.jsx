@@ -6,9 +6,6 @@ import styles from './Sidebar.module.css';
 
 export default function Sidebar ()
 {
-
-  // console.log('SideBar');
-
   return (
     <div className={styles.sidebar}>
       <Logo />

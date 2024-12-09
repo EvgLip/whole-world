@@ -28,9 +28,6 @@ const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 export default function App ()
 {
-
-  // console.log('App');
-
   return (
     <AuthContextProvider>
       <CitiesProvider>

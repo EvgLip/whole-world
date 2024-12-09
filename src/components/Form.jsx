@@ -61,7 +61,6 @@ function Form ()
         setCityName(data.city === data.locality ? `${data.city}` : `${data.city} ${data.locality}`);
         setCountry(data.countryName);
         setEmoji(convertToEmoji(data.countryCode));
-        console.log('Form data ', data);
       }
       catch (error) 
       {
@@ -97,8 +96,6 @@ function Form ()
     navigate('/app');
   }
 
-  // console.log('Form');
-
   if (isLoadingGeocoding) return <Spinner />;
   if (geocodingError) return <Message message={geocodingError} />;
   if (!lat && !lng) return <Message message={'Укажите нужное место на карте 🫠'} />;
@@ -109,7 +106,7 @@ function Form ()
       onSubmit={handleSubmit}
     >
       <div className={styles.row}>
-        <label htmlFor="cityName">City name</label>
+        <label htmlFor="cityName">Город</label>
         <input
           id="cityName"
           onChange={(e) => setCityName(e.target.value)}
@@ -119,7 +116,7 @@ function Form ()
       </div>
 
       <div className={styles.row}>
-        <label htmlFor="date">Когда Вы там были {cityName}?</label>
+        <label htmlFor="date">Когда Вы посещали {cityName}?</label>
         {/* <input
           id="date"
           onChange={(e) => setDate(e.target.value)}
@@ -136,7 +133,7 @@ function Form ()
       </div>
 
       <div className={styles.row}>
-        <label htmlFor="notes">Notes about your trip to {cityName}</label>
+        <label htmlFor="notes">Заметки о вашей поездке в {cityName}</label>
         <textarea
           id="notes"
           onChange={(e) => setNotes(e.target.value)}
@@ -145,7 +142,7 @@ function Form ()
       </div>
 
       <div className={styles.buttons}>
-        <Button type={'primary'}>Add</Button>
+        <Button type={'primary'}>Добавить</Button>
         <BackButton />
       </div>
     </form>

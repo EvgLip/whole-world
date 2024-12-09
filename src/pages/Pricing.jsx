@@ -8,9 +8,7 @@ export default function Product ()
       <section>
         <div>
           <h2>
-            Стоимость использования.
-            <br />
-            Всего 300 &#x20bd;/месяц.
+            Всего 100 &#x20bd;/месяц.
           </h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae vel

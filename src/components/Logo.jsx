@@ -3,8 +3,6 @@ import styles from "./Logo.module.css";
 
 function Logo ()
 {
-  // console.log('Logo');
-
   return (
     <Link to='/'>
       <img src="/logo.png" alt="ВесьМир logo" className={styles.logo} />

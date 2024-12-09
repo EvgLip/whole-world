@@ -9,11 +9,9 @@ export default function CityList ()
   //определяется в <CitiesContext/>
   const { cities, isLoading } = useCities();
 
-  // console.log('CityList');
-
   if (isLoading) return <Spinner />;
 
-  if (!cities.length) return <Message message='Добавьте своe первое место, щелкнув по карте.' />;
+  if (!cities.length) return <Message message='Добавьте своe первое место, указав его на карте.' />;
 
   return (
     <ul className={styles.cityList}>

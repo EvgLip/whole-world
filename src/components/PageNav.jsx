@@ -4,9 +4,6 @@ import styles from "./PageNav.module.css";
 
 function PageNav ()
 {
-
-  console.log('PageNav');
-
   return (
     <nav className={styles.nav}>
       <Logo />
@@ -15,7 +12,7 @@ function PageNav ()
           <NavLink to="/pricing">Цены</NavLink>
         </li>
         <li>
-          <NavLink to="/product">О продукте</NavLink>
+          <NavLink to="/product">О проекте</NavLink>
         </li>
         <li>
           <NavLink to="/login" className={styles.ctaLink}>

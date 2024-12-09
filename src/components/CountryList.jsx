@@ -10,11 +10,9 @@ export default function CountryList ()
 {
   const { cities, isLoading } = useCities();
 
-  // console.log('CountryList');
-
   if (isLoading) return <Spinner />;
 
-  if (!cities.length) return <Message message='Добавьте своe первое место, щелкнув по карте.' />;
+  if (!cities.length) return <Message message='Добавьте своe первое место, указав его на карте.' />;
 
   // const countries = cities.reduce((arr, city) =>
   // {
