@@ -8,7 +8,7 @@ export default function Product ()
       <section>
         <div>
           <h2>
-            Всего 100 &#x20bd;/месяц.
+            Всего 1000 &#x20bd; за бессрочное пользование.
           </h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae vel
@@ -16,7 +16,7 @@ export default function Product ()
             voluptatem iste.
           </p>
         </div>
-        <img src="img-2.jpg" alt="overview of a large city with skyscrapers" />
+        <img src="img-2.jpg" alt="обзор большого города с небоскребами" />
       </section>
     </main>
   );
